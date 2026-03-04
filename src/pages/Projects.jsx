@@ -25,7 +25,7 @@ function Projects() {
                     <div className="bg-[#0b0618] rounded-2xl flex flex-col h-[550px] w-[600px] p-10 space-y-4">
 
                         <img
-                            src="/src/assets/cpu-scheduler.jpg"
+                            src="/assets/cpu-scheduler.jpg"
                             alt="CPU Scheduler"
                             className="rounded-lg w-full h-3/5 object-top object-cover"
                         />
@@ -77,7 +77,7 @@ function Projects() {
                     <div className="bg-[#0b0618] rounded-2xl flex flex-col h-[550px] w-[600px] p-10 space-y-4">
 
                         <img
-                            src="/src/assets/movie.jpg"
+                            src="/assets/movie.jpg"
                             alt="CPU Scheduler"
                             className="rounded-lg w-full h-3/5 object-top object-cover"
                         />

@@ -101,7 +101,7 @@ function Platform() {
                         onClick={() => window.open("https://codolio.com/profile/M_K", "_blank")}
                         className="flex items-center justify-start gap-6"
                     >
-                        <img src="https://manoj-0207.github.io/Portfolio/assets/images/Codolio.png" className="w-20 h-20" />
+                        <img src="/assets/Codolio.png" className="w-20 h-20" />
 
                         <div>
                             <h2 className="text-2xl font-semibold">Codolio</h2>
