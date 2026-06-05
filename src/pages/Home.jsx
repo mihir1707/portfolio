@@ -6,7 +6,7 @@ import Skills from '../components/Skills.jsx'
 
 function Home() {
     return (
-        <div>
+        <div className="pb-24">
             <HeroSection/>
             <Skills/>
             <Card/>

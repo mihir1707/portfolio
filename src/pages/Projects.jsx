@@ -5,105 +5,88 @@ import { Github } from "lucide-react";
 function Projects() {
     return (
         <div className="text-white py-16 px-10">
-            <br/><br/><br/>
-            <br/><br/>
-
-            <h1 className="text-4xl font-bold text-center mb-24">
+            <h1 className="text-4xl font-bold text-center mt-12 mb-20">
                 Projects
             </h1>
-            <br/><br/>
-            <br/><br/>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 place-items-center">
-
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 place-items-center max-w-6xl mx-auto">
                 <ElectricBorder
-                    color="rgba(118, 72, 224, 0.67)"
+                    color="#ffffff"
                     speed={1}
                     chaos={0}
-                    style={{ borderRadius: 25 }}
+                    style={{ borderRadius: 24 }}
+                    className="w-full max-w-[500px]"
                 >
-                    <div className="bg-[#0b0618] rounded-2xl flex flex-col h-[550px] w-[600px] p-10 space-y-4">
-
+                    <div className="bg-black border border-white rounded-2xl flex flex-col h-[550px] p-6 sm:p-8">
                         <img
                             src="/assets/cpu-scheduler.jpg"
                             alt="CPU Scheduler"
-                            className="rounded-lg w-full h-3/5 object-top object-cover"
+                            className="rounded-xl w-full h-[220px] object-top object-cover border border-white mb-6"
                         />
-                        <br />
 
-                        <h2 className="text-xl flex items-center justify-center font-semibold">
+                        <h2 className="text-2xl font-bold text-white mb-3 text-center">
                             CPU Scheduler Simulator
                         </h2>
 
-                        <p className="text-sm text-gray-300 leading-relaxed">
-                            Implemented CPU scheduling algorithms such as
-                            FCFS, SJF, SRTF, and Round Robin in Java to simulate
-                            process execution and analyze waiting time and
-                            turnaround time.
+                        <p className="text-sm text-gray-400 leading-relaxed text-center flex-grow">
+                            Implemented CPU scheduling algorithms such as FCFS, SJF, SRTF, and Round Robin in Java to simulate process execution and analyze waiting time and turnaround time.
                         </p>
-                        <br />
 
-                        <div className="text-md text-cyan-300 font-medium tracking-wide">
-                            C • Operating Systems • Algorithms
+                        <div className="flex flex-wrap items-center justify-center gap-2 mb-6">
+                            <span className="px-3 py-1 bg-white/10 text-white text-xs font-medium rounded-full border border-white/20">C</span>
+                            <span className="px-3 py-1 bg-white/10 text-white text-xs font-medium rounded-full border border-white/20">Operating Systems</span>
+                            <span className="px-3 py-1 bg-white/10 text-white text-xs font-medium rounded-full border border-white/20">Algorithms</span>
                         </div>
-                        <br />
 
-                        <div className="flex items-center justify-between mt-auto pt-4">
+                        <div className="flex items-center gap-4 mt-auto">
                             <a
                                 href="https://github.com/mihir1707/cpu-scheduler"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="w-25 h-10 flex items-center justify-center gap-2 px-4 py-2 border border-[#7648e0aa] rounded-lg hover:bg-[#7648e0aa] hover:text-black transition duration-300"
+                                className="flex-1 h-12 flex items-center justify-center gap-2 border border-white rounded-xl hover:bg-white hover:text-black transition duration-300 font-semibold"
                             >
                                 <Github size={20} />
-                                Code
+                                Source Code
                             </a>
-
-                            {/* <a className="w-25 justify-center h-10 cursor-pointer flex items-center gap-2 px-4 py-2 border border-[#7648e0aa] rounded-lg hover:bg-[#7648e0aa] hover:text-black transition duration-300">
-                                Live Demo
-                            </a> */}
                         </div>
-
                     </div>
                 </ElectricBorder>
 
-
                 <ElectricBorder
-                    color="rgba(118, 72, 224, 0.67)"
+                    color="#ffffff"
                     speed={1}
                     chaos={0.1}
-                    style={{ borderRadius: 25 }}
+                    style={{ borderRadius: 24 }}
+                    className="w-full max-w-[500px]"
                 >
-                    <div className="bg-[#0b0618] rounded-2xl flex flex-col h-[550px] w-[600px] p-10 space-y-4">
-
+                    <div className="bg-black border border-white rounded-2xl flex flex-col h-[550px] p-6 sm:p-8">
                         <img
                             src="/assets/movie.jpg"
-                            alt="CPU Scheduler"
-                            className="rounded-lg w-full h-3/5 object-top object-cover"
+                            alt="BookMoviShow"
+                            className="rounded-xl w-full h-[220px] object-top object-cover border border-white mb-6"
                         />
-                        <br />
 
-                        <h2 className="text-xl flex items-center justify-center font-semibold">
+                        <h2 className="text-2xl font-bold text-white mb-3 text-center">
                             BookMoviShow
                         </h2>
 
-                        <p className="text-sm text-gray-300 leading-relaxed">
-                            Full-stack movie ticket booking web app with real-time seat selection
-                            and booking management built using React and Node.js.
+                        <p className="text-sm text-gray-400 leading-relaxed text-center flex-grow">
+                            Full-stack movie ticket booking web app with real-time seat selection and booking management built using React and Node.js.
                         </p>
-                        <br />
 
-                        <div className="text-md text-cyan-300 font-medium tracking-wide">
-                            React • Node.js • Express • MongoDB
+                        <div className="flex flex-wrap items-center justify-center gap-2 mb-6">
+                            <span className="px-3 py-1 bg-white/10 text-white text-xs font-medium rounded-full border border-white/20">React</span>
+                            <span className="px-3 py-1 bg-white/10 text-white text-xs font-medium rounded-full border border-white/20">Node.js</span>
+                            <span className="px-3 py-1 bg-white/10 text-white text-xs font-medium rounded-full border border-white/20">Express</span>
+                            <span className="px-3 py-1 bg-white/10 text-white text-xs font-medium rounded-full border border-white/20">MongoDB</span>
                         </div>
-                        <br />
 
-                        <div className="flex items-center justify-between mt-auto pt-4">
+                        <div className="flex items-center gap-4 mt-auto">
                             <a
                                 href="https://github.com/mihir1707/BookMoviShow"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="w-25 h-10 flex items-center justify-center gap-2 px-4 py-2 border border-[#7648e0aa] rounded-lg hover:bg-[#7648e0aa] hover:text-black transition duration-300"
+                                className="flex-1 h-12 flex items-center justify-center gap-2 border border-white rounded-xl hover:bg-white hover:text-black transition duration-300 font-semibold"
                             >
                                 <Github size={20} />
                                 Code
@@ -111,14 +94,15 @@ function Projects() {
 
                             <a
                                 href='https://book-movi-show-frontend.vercel.app/'
-                                className="w-25 justify-center h-10 cursor-pointer flex items-center gap-2 px-4 py-2 border border-[#7648e0aa] rounded-lg hover:bg-[#7648e0aa] hover:text-black transition duration-300">
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex-1 h-12 flex items-center justify-center gap-2 bg-white text-black border border-white rounded-xl hover:bg-gray-200 transition duration-300 font-semibold"
+                            >
                                 Live Demo
                             </a>
                         </div>
-
                     </div>
                 </ElectricBorder>
-
             </div>
 
         </div>

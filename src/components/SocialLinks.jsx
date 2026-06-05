@@ -2,7 +2,7 @@ import { Github, Linkedin, Mail, Twitter } from "lucide-react";
 
 function SocialLinks() {
     return (
-        <div className="flex items-center gap-6 mt-6">
+        <div className="flex items-center gap-6">
 
             {/* GitHub */}
             <a
@@ -11,11 +11,11 @@ function SocialLinks() {
                 rel="noopener noreferrer"
                 className="group"
             >
-                <div className="flex items-center justify-center h-9 w-9 p-3 rounded-full bg-white/5 border border-white/10 
-                        hover:bg-purple-600/20 hover:border-purple-500 
+                <div className="flex items-center justify-center h-12 w-12 rounded-full bg-black border border-white/20 
+                        hover:bg-neutral-800 hover:border-white 
                         transition duration-300 hover:scale-110">
                     <Github
-                        size={20}
+                        size={24}
                         className="text-gray-300 group-hover:text-purple-400 transition"
                     />
                 </div>
@@ -28,11 +28,11 @@ function SocialLinks() {
                 rel="noopener noreferrer"
                 className="group"
             >
-                <div className="flex items-center justify-center h-9 w-9 p-3 rounded-full bg-white/5 border border-white/10 
-                        hover:bg-purple-600/20 hover:border-purple-500 
+                <div className="flex items-center justify-center h-12 w-12 rounded-full bg-black border border-white/20 
+                        hover:bg-neutral-800 hover:border-white 
                         transition duration-300 hover:scale-110">
                     <Linkedin
-                        size={20}
+                        size={24}
                         className="text-gray-300 group-hover:text-purple-400 transition"
                     />
                 </div>
@@ -45,11 +45,11 @@ function SocialLinks() {
                 rel="noopener noreferrer"
                 className="group"
             >
-                <div className="flex items-center justify-center h-9 w-9 p-3 rounded-full bg-white/5 border border-white/10 
-                        hover:bg-purple-600/20 hover:border-purple-500 
+                <div className="flex items-center justify-center h-12 w-12 rounded-full bg-black border border-white/20 
+                        hover:bg-neutral-800 hover:border-white 
                         transition duration-300 hover:scale-110">
                     <Twitter
-                        size={20}
+                        size={24}
                         className="text-gray-300 group-hover:text-purple-400 transition"
                     />
                 </div>
@@ -60,11 +60,11 @@ function SocialLinks() {
                 href="mihirkhunt2006@gmail.com"
                 className="group"
             >
-                <div className="flex items-center justify-center h-9 w-9 p-3 rounded-full bg-white/5 border border-white/10 
-                        hover:bg-purple-600/20 hover:border-purple-500 
+                <div className="flex items-center justify-center h-12 w-12 rounded-full bg-black border border-white/20 
+                        hover:bg-neutral-800 hover:border-white 
                         transition duration-300 hover:scale-110">
                     <Mail
-                        size={20}
+                        size={24}
                         className="text-gray-300 group-hover:text-purple-400 transition"
                     />
                 </div>

@@ -16,6 +16,10 @@ const GooeyNav = ({
     const textRef = useRef(null);
     const [activeIndex, setActiveIndex] = useState(initialActiveIndex);
 
+    useEffect(() => {
+        setActiveIndex(initialActiveIndex);
+    }, [initialActiveIndex]);
+
     const noise = (n = 1) => n / 2 - Math.random() * n;
     const getXY = (distance, pointIndex, totalPoints) => {
         const angle = ((360 + noise(8)) / totalPoints) * pointIndex * (Math.PI / 180);
@@ -151,15 +155,7 @@ const GooeyNav = ({
             color: black;
         }
         .effect.filter {
-            filter: blur(7px) contrast(100) blur(0);
-            mix-blend-mode: lighten;
-        }
-        .effect.filter::before {
-            content: "";
-            position: absolute;
-            inset: -30px -1000px;
-            z-index: -2;
-            background: rgba(0, 0, 0, 0.7);
+            filter: blur(4px) contrast(20) blur(0);
         }
         .effect.filter::after {
             content: "";
@@ -258,12 +254,12 @@ const GooeyNav = ({
         li::after {
             content: "";
             position: absolute;
-            inset: -5px -10px;
-            border-radius: 8px;
+            inset: 0;
+            border-radius: 9999px;
             background: white;
             opacity: 0;
-            transform: scale(0);
-            transition: all 0.3s ease;
+            transform: scale(0.8);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             z-index: -1;
         }
         `}
@@ -272,7 +268,7 @@ const GooeyNav = ({
                 <nav className="flex relative" style={{ transform: 'translate3d(0,0,0.01px)' }}>
                     <ul
                         ref={navRef}
-                        className="flex gap-8 list-none p-0 px-4 m-0 relative z-[3]"
+                        className="flex gap-2 sm:gap-4 list-none p-0 px-4 m-0 relative z-[3]"
                         style={{
                             color: 'white',
                             textShadow: '0 1px 1px hsl(205deg 30% 10% / 0.2)'
@@ -288,7 +284,7 @@ const GooeyNav = ({
                                     onClick={e => handleClick(e, index)}
                                     href={item.href}
                                     onKeyDown={e => handleKeyDown(e, index)}
-                                    className="outline-none py-[0.9em] px-[1.6em] inline-block"
+                                    className="outline-none py-1.5 px-4 inline-block text-sm font-medium"
                                 >
                                     {item.label}
                                 </a>
@@ -297,7 +293,7 @@ const GooeyNav = ({
                     </ul>
                 </nav>
                 <span className="effect filter" ref={filterRef} />
-                <span className="effect text" ref={textRef} />
+                <span className="effect text text-sm font-medium" ref={textRef} />
             </div>
         </>
     );

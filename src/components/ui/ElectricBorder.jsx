@@ -286,9 +286,9 @@ const ElectricBorder = ({
                     style={{ border: `2px solid ${color}`, filter: 'blur(4px)' }}
                 />
                 <div
-                    className="absolute inset-0 rounded-[inherit] pointer-events-none -z-[1] scale-110 opacity-30"
+                    className="absolute inset-0 rounded-[inherit] pointer-events-none -z-[1] scale-105 opacity-10"
                     style={{
-                        filter: 'blur(32px)',
+                        filter: 'blur(16px)',
                         background: `linear-gradient(-30deg, ${color}, transparent, ${color})`
                     }}
                 />
