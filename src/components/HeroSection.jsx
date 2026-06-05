@@ -23,11 +23,11 @@ function HeroSection() {
                         </GradientText>
                     </h1>
                     
-                    <div className="flex flex-col gap-6">
-                        <div className="flex gap-6 sm:gap-10">
+                    <div className="flex flex-col gap-6 w-full sm:w-fit">
+                        <div className="flex flex-col sm:flex-row gap-4 sm:gap-10 w-full">
                             <a 
                                 href="/resume.pdf"
-                                className="flex items-center justify-center gap-2 px-6 py-3 h-12 w-fit cursor-pointer bg-black text-white border border-white hover:bg-neutral-800 rounded-full transition whitespace-nowrap"
+                                className="flex items-center justify-center gap-2 px-6 py-3 h-12 w-full sm:w-fit cursor-pointer bg-black text-white border border-white hover:bg-neutral-800 rounded-full transition whitespace-nowrap"
                             >
                                 <Download size={18} />
                                 Download Resume
@@ -35,7 +35,7 @@ function HeroSection() {
 
                             <Link
                                 to="/projects"
-                                className="flex items-center justify-center gap-2 px-6 py-3 h-12 w-fit cursor-pointer bg-black text-white border border-white/50 hover:bg-neutral-800 rounded-full transition whitespace-nowrap"
+                                className="flex items-center justify-center gap-2 px-6 py-3 h-12 w-full sm:w-fit cursor-pointer bg-black text-white border border-white/50 hover:bg-neutral-800 rounded-full transition whitespace-nowrap"
                             >
                                 View Projects
                             </Link>

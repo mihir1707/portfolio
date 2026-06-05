@@ -1,4 +1,5 @@
-import { Route, Routes } from "react-router-dom"
+import { Route, Routes, useLocation } from "react-router-dom"
+import { AnimatePresence } from "framer-motion"
 import Home from "./pages/Home.jsx"
 import Competitive from "./pages/Competitive.jsx"
 import DotGrid from "./components/ui/DotGrid.jsx"
@@ -6,6 +7,7 @@ import Projects from "./pages/Projects.jsx"
 import Navbar from "./components/Navbar.jsx"
 
 function App() {
+  const location = useLocation();
 
   return (
     <>
@@ -25,11 +27,13 @@ function App() {
         </div>
         <Navbar/>
         <div className="pt-14">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/projects" element={<Projects />} />
-            <Route path="/competitive" element={<Competitive />} />
-          </Routes>
+          <AnimatePresence mode="wait">
+            <Routes location={location} key={location.pathname}>
+              <Route path="/" element={<Home />} />
+              <Route path="/projects" element={<Projects />} />
+              <Route path="/competitive" element={<Competitive />} />
+            </Routes>
+          </AnimatePresence>
         </div>
       </div>
     </>

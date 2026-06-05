@@ -5,7 +5,7 @@ import { SiLeetcode, SiCodechef } from "react-icons/si";
 function Platform() {
     return (
         <div className="text-white min-h-screen px-6 sm:px-16 py-20">
-            <h1 className="text-4xl font-bold text-center mt-12 mb-20">
+            <h1 className="text-3xl sm:text-4xl font-bold text-center mt-12 mb-20">
                 CP & DSA
             </h1>
 
@@ -160,7 +160,7 @@ function Platform() {
             <div className="mt-28 flex flex-col items-center justify-center gap-12 max-w-5xl mx-auto">
                 <div className="flex items-center gap-4">
                     <div className="h-[1px] w-12 sm:w-24 bg-gradient-to-r from-transparent to-white/30"></div>
-                    <h2 className="text-3xl font-bold text-center text-white tracking-wide">
+                    <h2 className="text-2xl sm:text-3xl font-bold text-center text-white tracking-wide">
                         Detailed Stats
                     </h2>
                     <div className="h-[1px] w-12 sm:w-24 bg-gradient-to-l from-transparent to-white/30"></div>

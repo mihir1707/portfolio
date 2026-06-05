@@ -9,14 +9,14 @@ function Card() {
 
             <SpotlightCard
                 spotlightColor="rgba(255, 255, 255, 0.15)"
-                className="w-95 h-65 rounded-3xl p-8
+                className="w-full max-w-[380px] h-auto min-h-[260px] rounded-3xl p-8
                 border border-white
                 shadow-[0_0_40px_rgba(0,0,0,0.3)]
                 flex flex-col justify-between bg-black"
             >
                 {/* Part 1: Title */}
                 <div className="flex items-center justify-center flex-1">
-                    <h1 className="text-3xl font-semibold text-center text-white">
+                    <h1 className="text-2xl sm:text-3xl font-semibold text-center text-white">
                         CP & DSA
                     </h1>
                 </div>
@@ -45,14 +45,14 @@ function Card() {
 
             <SpotlightCard
                 spotlightColor="rgba(255, 255, 255, 0.15)"
-                className="w-95 h-65 rounded-3xl p-8 
+                className="w-full max-w-[380px] h-auto min-h-[260px] rounded-3xl p-8 
                 border border-white
                 shadow-[0_0_40px_rgba(0,0,0,0.3)] 
                 flex flex-col justify-between bg-black"
             >
                 {/* Part 1: Title */}
                 <div className="flex items-center justify-center flex-1">
-                    <h1 className="text-3xl font-semibold text-center text-white">
+                    <h1 className="text-2xl sm:text-3xl font-semibold text-center text-white">
                         Projects
                     </h1>
                 </div>
@@ -81,7 +81,7 @@ function Card() {
 
             <SpotlightCard
                 spotlightColor="rgba(255, 255, 255, 0.15)"
-                className="w-95 h-65 rounded-3xl p-8 
+                className="w-full max-w-[380px] h-auto min-h-[260px] rounded-3xl p-8 
                 border border-white
                 shadow-[0_0_40px_rgba(0,0,0,0.3)] 
                 flex flex-col justify-between bg-black"
@@ -91,7 +91,7 @@ function Card() {
                     <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center shrink-0 border border-white">
                         <img src="https://i.ibb.co/6J0r7rW/Daco-5610880.png" alt="ICPC Global" className="w-8 h-8 object-contain" />
                     </div>
-                    <h1 className="text-3xl font-semibold text-center text-white leading-none tracking-tight">
+                    <h1 className="text-2xl sm:text-3xl font-semibold text-center text-white leading-none tracking-tight">
                         ICPC 2025
                     </h1>
                 </div>

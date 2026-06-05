@@ -1,11 +1,18 @@
 import React from 'react'
+import { motion } from 'framer-motion'
 import ElectricBorder from '../components/ui/ElectricBorder'
 import { Github } from "lucide-react";
 
 function Projects() {
     return (
-        <div className="text-white py-16 px-10">
-            <h1 className="text-4xl font-bold text-center mt-12 mb-20">
+        <motion.div 
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -15 }}
+            transition={{ duration: 0.3, ease: "easeInOut" }}
+            className="text-white py-16 px-10"
+        >
+            <h1 className="text-3xl sm:text-4xl font-bold text-center mt-12 mb-20">
                 Projects
             </h1>
 
@@ -17,7 +24,7 @@ function Projects() {
                     style={{ borderRadius: 24 }}
                     className="w-full max-w-[500px]"
                 >
-                    <div className="bg-black border border-white rounded-2xl flex flex-col h-[550px] p-6 sm:p-8">
+                    <div className="bg-black border border-white rounded-2xl flex flex-col h-auto min-h-[550px] p-6 sm:p-8">
                         <img
                             src="/assets/cpu-scheduler.jpg"
                             alt="CPU Scheduler"
@@ -32,13 +39,17 @@ function Projects() {
                             Implemented CPU scheduling algorithms such as FCFS, SJF, SRTF, and Round Robin in Java to simulate process execution and analyze waiting time and turnaround time.
                         </p>
 
-                        <div className="flex flex-wrap items-center justify-center gap-2 mb-6">
+                        <hr className="border-white/10 w-full my-5" />
+
+                        <div className="flex flex-wrap items-center justify-center gap-2">
                             <span className="px-3 py-1 bg-white/10 text-white text-xs font-medium rounded-full border border-white/20">C</span>
                             <span className="px-3 py-1 bg-white/10 text-white text-xs font-medium rounded-full border border-white/20">Operating Systems</span>
                             <span className="px-3 py-1 bg-white/10 text-white text-xs font-medium rounded-full border border-white/20">Algorithms</span>
                         </div>
 
-                        <div className="flex items-center gap-4 mt-auto">
+                        <hr className="border-white/10 w-full my-5" />
+
+                        <div className="flex flex-wrap sm:flex-nowrap items-center gap-4 mt-auto">
                             <a
                                 href="https://github.com/mihir1707/cpu-scheduler"
                                 target="_blank"
@@ -59,7 +70,7 @@ function Projects() {
                     style={{ borderRadius: 24 }}
                     className="w-full max-w-[500px]"
                 >
-                    <div className="bg-black border border-white rounded-2xl flex flex-col h-[550px] p-6 sm:p-8">
+                    <div className="bg-black border border-white rounded-2xl flex flex-col h-auto min-h-[550px] p-6 sm:p-8">
                         <img
                             src="/assets/movie.jpg"
                             alt="BookMoviShow"
@@ -74,14 +85,18 @@ function Projects() {
                             Full-stack movie ticket booking web app with real-time seat selection and booking management built using React and Node.js.
                         </p>
 
-                        <div className="flex flex-wrap items-center justify-center gap-2 mb-6">
+                        <hr className="border-white/10 w-full my-5" />
+
+                        <div className="flex flex-wrap items-center justify-center gap-2">
                             <span className="px-3 py-1 bg-white/10 text-white text-xs font-medium rounded-full border border-white/20">React</span>
                             <span className="px-3 py-1 bg-white/10 text-white text-xs font-medium rounded-full border border-white/20">Node.js</span>
                             <span className="px-3 py-1 bg-white/10 text-white text-xs font-medium rounded-full border border-white/20">Express</span>
                             <span className="px-3 py-1 bg-white/10 text-white text-xs font-medium rounded-full border border-white/20">MongoDB</span>
                         </div>
 
-                        <div className="flex items-center gap-4 mt-auto">
+                        <hr className="border-white/10 w-full my-5" />
+
+                        <div className="flex flex-wrap sm:flex-nowrap items-center gap-4 mt-auto">
                             <a
                                 href="https://github.com/mihir1707/BookMoviShow"
                                 target="_blank"
@@ -105,7 +120,7 @@ function Projects() {
                 </ElectricBorder>
             </div>
 
-        </div>
+        </motion.div>
     )
 }
 

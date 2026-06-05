@@ -268,7 +268,7 @@ const GooeyNav = ({
                 <nav className="flex relative" style={{ transform: 'translate3d(0,0,0.01px)' }}>
                     <ul
                         ref={navRef}
-                        className="flex gap-2 sm:gap-4 list-none p-0 px-4 m-0 relative z-[3]"
+                        className="flex gap-1 sm:gap-4 list-none p-0 px-2 sm:px-4 m-0 relative z-[3]"
                         style={{
                             color: 'white',
                             textShadow: '0 1px 1px hsl(205deg 30% 10% / 0.2)'
@@ -284,7 +284,7 @@ const GooeyNav = ({
                                     onClick={e => handleClick(e, index)}
                                     href={item.href}
                                     onKeyDown={e => handleKeyDown(e, index)}
-                                    className="outline-none py-1.5 px-4 inline-block text-sm font-medium"
+                                    className="outline-none py-1.5 px-3 sm:px-4 inline-block text-[11px] sm:text-sm font-medium whitespace-nowrap"
                                 >
                                     {item.label}
                                 </a>
@@ -293,7 +293,7 @@ const GooeyNav = ({
                     </ul>
                 </nav>
                 <span className="effect filter" ref={filterRef} />
-                <span className="effect text text-sm font-medium" ref={textRef} />
+                <span className="effect text text-[11px] sm:text-sm font-medium whitespace-nowrap" ref={textRef} />
             </div>
         </>
     );
