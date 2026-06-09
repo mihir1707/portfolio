@@ -1,8 +1,45 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import GlareHover from "./ui/GlareHover";
 import { SiLeetcode, SiCodechef } from "react-icons/si";
 
 function Platform() {
+    const [lcRating, setLcRating] = useState("...");
+    const [lcMaxRating, setLcMaxRating] = useState("...");
+    const [cfRating, setCfRating] = useState("...");
+    const [cfMaxRating, setCfMaxRating] = useState("...");
+    const [cfRank, setCfRank] = useState("...");
+
+    useEffect(() => {
+        fetch("https://alfa-leetcode-api.onrender.com/MK_1502/contest")
+            .then(res => res.json())
+            .then(data => {
+                if (data && data.contestRating) {
+                    setLcRating(Math.round(data.contestRating).toString());
+                }
+                if (data && data.contestParticipation && data.contestParticipation.length > 0) {
+                    const maxR = Math.max(...data.contestParticipation.map(c => c.rating));
+                    setLcMaxRating(Math.round(maxR).toString());
+                }
+            })
+            .catch(err => console.error("Failed to fetch LeetCode rating", err));
+
+        fetch("https://codeforces.com/api/user.info?handles=_Infinity_Leo_")
+            .then(res => res.json())
+            .then(data => {
+                if (data && data.status === "OK" && data.result && data.result.length > 0) {
+                    const user = data.result[0];
+                    if (user.rating) setCfRating(user.rating.toString());
+                    if (user.maxRating) setCfMaxRating(user.maxRating.toString());
+                    if (user.rank) {
+                        // Capitalize the first letter of the rank
+                        const formattedRank = user.rank.charAt(0).toUpperCase() + user.rank.slice(1);
+                        setCfRank(formattedRank);
+                    }
+                }
+            })
+            .catch(err => console.error("Failed to fetch Codeforces rating", err));
+    }, []);
+
     return (
         <div className="text-white min-h-screen px-6 sm:px-16 py-20">
             <h1 className="text-3xl sm:text-4xl font-bold text-center mt-12 mb-20">
@@ -29,12 +66,12 @@ function Platform() {
                         </div>
 
                         <div className="flex flex-col items-start justify-center">
-                            <h2 className="text-lg font-bold text-white leading-tight">LeetCode</h2>
+                            <h2 className="text-xl font-bold text-white leading-tight">LeetCode</h2>
                             <div className="flex items-center gap-1.5 mt-0.5">
-                                <span className="text-gray-400 text-xs">Rating:</span>
-                                <span className="text-cyan-300 text-xs font-semibold">1916</span>
+                                <span className="text-gray-400 text-sm">Rating:</span>
+                                <span className="text-cyan-300 text-sm font-semibold">{lcRating} (max. {lcMaxRating})</span>
                             </div>
-                            <p className="text-xs font-bold text-cyan-300 mt-0.5">Knight</p>
+                            <p className="text-sm font-bold text-cyan-300 mt-0.5">Knight</p>
                         </div>
                     </div>
                 </GlareHover>
@@ -61,12 +98,12 @@ function Platform() {
                         </div>
 
                         <div className="flex flex-col items-start justify-center">
-                            <h2 className="text-lg font-bold text-white leading-tight">Codeforces</h2>
+                            <h2 className="text-xl font-bold text-white leading-tight">Codeforces</h2>
                             <div className="flex items-center gap-1.5 mt-0.5">
-                                <span className="text-gray-400 text-xs">Rating:</span>
-                                <span className="text-cyan-300 text-xs font-semibold">1547</span>
+                                <span className="text-gray-400 text-sm">Rating:</span>
+                                <span className="text-cyan-300 text-sm font-semibold">{cfRating} (max. {cfMaxRating})</span>
                             </div>
-                            <p className="text-xs font-bold text-cyan-300 mt-0.5">Specialist</p>
+                            <p className="text-sm font-bold text-cyan-300 mt-0.5">{cfRank}</p>
                         </div>
                     </div>
                 </GlareHover>
@@ -89,12 +126,12 @@ function Platform() {
                         </div>
 
                         <div className="flex flex-col items-start justify-center">
-                            <h2 className="text-lg font-bold text-white leading-tight">CodeChef</h2>
+                            <h2 className="text-xl font-bold text-white leading-tight">CodeChef</h2>
                             <div className="flex items-center gap-1.5 mt-0.5">
-                                <span className="text-gray-400 text-xs">Rating:</span>
-                                <span className="text-cyan-300 text-xs font-semibold">1694</span>
+                                <span className="text-gray-400 text-sm">Rating:</span>
+                                <span className="text-cyan-300 text-sm font-semibold">1694</span>
                             </div>
-                            <p className="text-xs font-bold text-cyan-300 mt-0.5">3 Star</p>
+                            <p className="text-sm font-bold text-cyan-300 mt-0.5">3 Star</p>
                         </div>
                     </div>
                 </GlareHover>
@@ -117,8 +154,8 @@ function Platform() {
                         </div>
 
                         <div className="flex flex-col items-start justify-center">
-                            <h2 className="text-lg font-bold text-white leading-tight">Codolio</h2>
-                            <p className="text-xs font-medium text-gray-300 mt-0.5">Overall Performance</p>
+                            <h2 className="text-xl font-bold text-white leading-tight">Codolio</h2>
+                            <p className="text-sm font-medium text-gray-300 mt-0.5">Overall Performance</p>
                         </div>
                     </div>
                 </GlareHover>
@@ -141,15 +178,15 @@ function Platform() {
                         </div>
 
                         <div className="flex flex-col items-start justify-center">
-                            <h2 className="text-lg font-bold text-white leading-tight">ICPC 2025</h2>
+                            <h2 className="text-xl font-bold text-white leading-tight">ICPC 2025</h2>
                             <div className="flex items-center gap-1 mt-0.5">
-                                <span className="text-gray-400 text-[11px]">Team:</span>
-                                <span className="text-white text-[11px] font-semibold">Eternal Force</span>
+                                <span className="text-gray-400 text-xs">Team:</span>
+                                <span className="text-white text-xs font-semibold">Eternal Force</span>
                             </div>
                             <div className="flex items-center gap-1 mt-0.5">
-                                <span className="text-gray-400 text-[11px]">Rank:</span>
-                                <span className="text-cyan-300 text-[11px] font-bold">51</span>
-                                <span className="text-gray-500 text-[10px] ml-1">(Kanpur)</span>
+                                <span className="text-gray-400 text-xs">Rank:</span>
+                                <span className="text-cyan-300 text-xs font-bold">51</span>
+                                <span className="text-gray-500 text-[11px] ml-1">(Kanpur)</span>
                             </div>
                         </div>
                     </div>
@@ -159,11 +196,11 @@ function Platform() {
 
             <div className="mt-28 flex flex-col items-center justify-center gap-12 max-w-5xl mx-auto">
                 <div className="flex items-center gap-4">
-                    <div className="h-[1px] w-12 sm:w-24 bg-gradient-to-r from-transparent to-white/30"></div>
+                    <div className="h-[2px] w-24 sm:w-48 bg-gradient-to-r from-transparent to-white/30"></div>
                     <h2 className="text-2xl sm:text-3xl font-bold text-center text-white tracking-wide">
                         Detailed Stats
                     </h2>
-                    <div className="h-[1px] w-12 sm:w-24 bg-gradient-to-l from-transparent to-white/30"></div>
+                    <div className="h-[2px] w-24 sm:w-48 bg-gradient-to-l from-transparent to-white/30"></div>
                 </div>
                 
                 <div className="flex flex-wrap items-center justify-center gap-10">
@@ -175,7 +212,7 @@ function Platform() {
                         </div>
                         <div className="rounded-3xl border border-white/20 p-3 bg-black shadow-[0_0_40px_rgba(255,255,255,0.05)] hover:shadow-[0_0_40px_rgba(255,255,255,0.15)] hover:border-white/50 transition-all duration-500 overflow-hidden group">
                             <img 
-                                src="https://leetcard.jacoblin.cool/MK_1502?theme=dark&font=Baloo&ext=heatmap" 
+                                src="https://leetcard.jacoblin.cool/MK_1502?theme=dark&font=Baloo&ext=contest" 
                                 alt="LeetCode Stats" 
                                 className="rounded-xl object-contain max-w-full group-hover:scale-[1.02] transition-transform duration-500"
                             />
