@@ -7,8 +7,10 @@ function Navbar() {
 
     const items = [
         { label: "Home", href: "/" },
+        { label: "About", href: "/about" },
         { label: "Projects", href: "/projects" },
         { label: "CP & DSA", href: "/competitive" },
+        { label: "Contact", href: "/contact" },
     ];
 
     const activeIndex = items.findIndex(item => item.href === location.pathname);

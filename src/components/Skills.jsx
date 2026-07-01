@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 import LogoLoop from "./ui/LogoLoop";
 import {
     SiCplusplus,
@@ -16,7 +17,7 @@ import {
 } from "react-icons/si";
 
 const SkillCard = ({ icon, name }) => (
-    <div className="flex items-center gap-4 bg-black border border-white/20 px-6 py-3 rounded-2xl hover:border-white transition-colors duration-300">
+    <div className="flex items-center gap-4 bg-transparent border border-white/20 px-6 py-3 rounded-2xl hover:bg-black hover:border-white transition-colors duration-300">
         <div className="text-3xl text-white">{icon}</div>
         <span className="text-lg font-semibold text-white whitespace-nowrap">{name}</span>
     </div>
@@ -39,17 +40,28 @@ const techLogos = [
 
 function Skills() {
     return (
-        <section className="w-full pt-0 pb-20 text-white">
-            <h2 className="text-4xl font-bold text-center mb-6 pt-10">
+        <section className="w-full pt-20 mt-10 pb-20 text-white">
+            <motion.h2
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, ease: "easeOut" }}
+                className="text-4xl font-bold text-center mb-6 pt-10"
+            >
                 My Skills
-            </h2>
+            </motion.h2>
 
-            <div className="max-w-7xl mx-auto px-6 lg:px-16 mb-6">
+            <motion.div
+                initial={{ opacity: 0, scaleX: 0.6 }}
+                whileInView={{ opacity: 1, scaleX: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, ease: "easeOut", delay: 0.1 }}
+                className="max-w-7xl mx-auto px-6 lg:px-16 mb-6"
+            >
                 <div className="w-full h-[2px] bg-white shadow-[0_4px_12px_rgba(0,0,0,1)]"></div>
-            </div>
+            </motion.div>
 
             <div className="h-[100px] relative overflow-hidden mt-10">
-
                 <LogoLoop
                     logos={techLogos}
                     speed={120}
@@ -61,13 +73,11 @@ function Skills() {
                     fadeOut={true}
                     scaleOnHover={true}
                 />
-
             </div>
 
             <div className="max-w-7xl mx-auto px-6 lg:px-16 mt-0 mb-6">
                 <div className="w-full h-[2px] bg-white shadow-[0_4px_12px_rgba(0,0,0,1)]"></div>
             </div>
-
         </section>
     );
 }

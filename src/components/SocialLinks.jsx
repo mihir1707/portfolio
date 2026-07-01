@@ -16,7 +16,7 @@ function SocialLinks() {
                         transition duration-300 hover:scale-110">
                     <Github
                         size={24}
-                        className="text-gray-300 group-hover:text-purple-400 transition"
+                        className="text-gray-300 group-hover:text-white transition"
                     />
                 </div>
             </a>
@@ -33,7 +33,7 @@ function SocialLinks() {
                         transition duration-300 hover:scale-110">
                     <Linkedin
                         size={24}
-                        className="text-gray-300 group-hover:text-purple-400 transition"
+                        className="text-gray-300 group-hover:text-white transition"
                     />
                 </div>
             </a>
@@ -50,14 +50,14 @@ function SocialLinks() {
                         transition duration-300 hover:scale-110">
                     <Twitter
                         size={24}
-                        className="text-gray-300 group-hover:text-purple-400 transition"
+                        className="text-gray-300 group-hover:text-white transition"
                     />
                 </div>
             </a>
 
             {/* Email */}
             <a
-                href="mihirkhunt2006@gmail.com"
+                href="mailto:mihirkhunt2006@gmail.com"
                 className="group"
             >
                 <div className="flex items-center justify-center h-12 w-12 rounded-full bg-black border border-white/20 
@@ -65,7 +65,7 @@ function SocialLinks() {
                         transition duration-300 hover:scale-110">
                     <Mail
                         size={24}
-                        className="text-gray-300 group-hover:text-purple-400 transition"
+                        className="text-gray-300 group-hover:text-white transition"
                     />
                 </div>
             </a>
